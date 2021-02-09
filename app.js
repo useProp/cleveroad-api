@@ -28,7 +28,7 @@ const init = async () => {
     cert: fs.readFileSync("cleveroad.cert", "utf8")
   }
   const server = https.createServer(credentials, app);
-  server.listen(3000, () => {
+  server.listen(process.env.APP_PORT, () => {
     console.log('Server is running...')
   });
 };
